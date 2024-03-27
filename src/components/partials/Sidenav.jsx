@@ -12,27 +12,27 @@ const Sidenav = () => {
              <nav className='text-[1.4vw] text-zinc-400 flex flex-col'>
                 <h1 className='text-white my-5 text-[1.6vw]'>News Feeds</h1>
 
-             <Link className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration:500' >
+             <Link to="/trending" className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration:500' >
              <i className="mr-2 ri-fire-fill"></i>
                Trending
              </Link>
 
-             <Link className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration:500'>
+             <Link to="/popular" className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration:500'>
              <i className="mr-2 ri-bard-fill"></i>
                Popular
              </Link>
 
-             <Link className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration:500'>
+             <Link to="/movie" className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration:500'>
              <i className="mr-2 ri-clapperboard-fill"></i>
              Movies
              </Link>
 
-             <Link className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration:500'>
+             <Link to="/tv" className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration:500'>
              <i className="mr-2 ri-slideshow-fill"></i>
              TV Shows
              </Link>
 
-             <Link className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration:500'>
+             <Link to="/people" className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration:500'>
              <i className="mr-2 ri-team-fill"></i>
              People
              </Link>
