@@ -11,7 +11,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 const Trending = () => {  
 
-    const navigate = useNavigate()
+    const navigate = useNavigate()   
     const [category, setcategory] = useState("all")
     const [duration, setduration] = useState("day")
     const [trending, settrending] = useState([])  
@@ -74,7 +74,7 @@ const Trending = () => {
       hasMore={hasmore}
       loader={<h1>Loading...</h1>}
       >
-        <Card data={trending} /> 
+        <Card data={trending} title={category} /> 
       </InfiniteScroll>
        
     </div>

@@ -23,7 +23,7 @@ const Movie = () => {
               console.log(data)
              if(data.results.length > 0) {
                 setmovie((prevState) => [...prevState, ...data.results])
-                //settrending(data.results)
+                //setmovie(data.results)
                 setpage(page+1)
              } else {
                 sethasmore(false)
@@ -57,7 +57,7 @@ const Movie = () => {
        <i onClick={() => navigate(-1)} className=" mr-2 hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
         Movie <small className='text-xs'>({category})</small>
        </h1>
-       <div className='flex items-center w-[95%]  '>
+       <div className='flex items-center w-[95%]'>
         <Topnav/>
         <div className='flex gap-3'>
         <Dropdown title="Category" options={["popular","top_rated","upcoming","now_playing"]} func={(e) => setcategory(e.target.value)} />
@@ -72,7 +72,7 @@ const Movie = () => {
       hasMore={hasmore}
       loader={<h1>Loading...</h1>}
       >
-        <Card data={movie} /> 
+        <Card data={movie} title="movie" /> 
       </InfiniteScroll>
        
     </div>

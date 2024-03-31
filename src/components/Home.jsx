@@ -2,11 +2,11 @@ import React from 'react'
 import Sidenav from './partials/Sidenav'
 import Topnav from './partials/Topnav'
 import Header from './partials/Header'
-import { useState } from 'react'
-import axios from '../utils/Axios'
-import { useEffect } from 'react'
-import HorizontalCards from './partials/HorizontalCards'
 import Dropdown from './partials/Dropdown'
+import HorizontalCards from './partials/HorizontalCards'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import axios from '../utils/Axios'
 import Loader from './Loader'
 
 const Home = () => {
@@ -14,13 +14,14 @@ const Home = () => {
      
     const [wallpaper,setwallpaper] = useState(null)
     const [trending,settrending] = useState(null)
-   const [category,setcategory] = useState("all")
+    const [category,setcategory] = useState("all")
     
 
     const getWallpaper = async() => {
         try {
             const {data} = await axios.get(`/trending/all/week`)
-            const randomData = data.results[(Math.random()* data.results.length).toFixed()]
+            const randomData = data.results[(Math.random() * data.results.length).toFixed()]
+            
               setwallpaper(randomData)
             
         } catch (error) {
@@ -28,6 +29,7 @@ const Home = () => {
             
         }
     }
+    
     const getTrending = async() => {
         try {
             const {data} = await axios.get(`/trending/${category}/week`)
@@ -35,17 +37,17 @@ const Home = () => {
               settrending(data.results)
             
         } catch (error) {
-            console.log(error)
+            console.log(error) 
             
         }
-    }
+    } 
     
 
     useEffect(() => {
         getTrending()
        !wallpaper && getWallpaper()
       
-    },[category])
+    },[category]) 
     
 
  return wallpaper && trending ?  (
@@ -61,7 +63,7 @@ const Home = () => {
        </h1>
        <Dropdown title="Filter" options={["all","movie","tv"]} func={(e) => setcategory(e.target.value)} />
      </div>
-        <HorizontalCards data={trending} />
+        <HorizontalCards data={trending}/>
        </div>
             
     </>

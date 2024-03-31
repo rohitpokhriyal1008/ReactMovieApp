@@ -71,7 +71,7 @@ const People = () => {
       hasMore={hasmore}
       loader={<h1>Loading...</h1>}
       >
-        <Card data={person} /> 
+        <Card data={person} title="people" /> 
       </InfiniteScroll>
        
     </div>
