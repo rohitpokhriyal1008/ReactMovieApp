@@ -1,17 +1,17 @@
 import axios from '../../utils/Axios';
-import { loadmovie} from '../reducers/MovieReducer';
-export {removemovie} from '../reducers/MovieReducer'
+import {loadtv} from '../reducers/TvReducer';
+export {removetv} from '../reducers/TvReducer'
 
-export const asyncloadmovie = (id) => async (dispatch, getState) => {
+export const asyncloadtv = (id) => async (dispatch, getState) => {
     try {
         const [detailResponse, externalIdResponse, recommendationsResponse, similarResponse, videosResponse, watchProvidersResponse,translationsResponse] = await Promise.all([
-            axios.get(`/movie/${id}`),
-            axios.get(`/movie/${id}/external_ids`),
-            axios.get(`/movie/${id}/recommendations`),
-            axios.get(`/movie/${id}/similar`),
-            axios.get(`/movie/${id}/videos`),
-            axios.get(`/movie/${id}/watch/providers`),
-            axios.get(`/movie/${id}/translations`)
+            axios.get(`/tv/${id}`),
+            axios.get(`/tv/${id}/external_ids`),
+            axios.get(`/tv/${id}/recommendations`),
+            axios.get(`/tv/${id}/similar`),
+            axios.get(`/tv/${id}/videos`),
+            axios.get(`/tv/${id}/watch/providers`),
+            axios.get(`/tv/${id}/translations`)
         ]);
 
         const { data: detail } = detailResponse;
@@ -35,11 +35,10 @@ export const asyncloadmovie = (id) => async (dispatch, getState) => {
             translations : translation
         };
         console.log(allDetails)
-        dispatch(loadmovie(allDetails));
+        dispatch(loadtv(allDetails));
         return allDetails;
 
     } catch (error) {
-        console.error("Error fetching movie details:", error);
-        // Dispatch an action to handle errors if necessary
+        console.error("Error fetching tv details:", error);
     }
 };
