@@ -10,7 +10,7 @@ import Loader from './Loader'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const People = () => {
-    document.title = "SCSDB|| People"
+    document.title = "PrimeTime| People"
     const navigate = useNavigate()
     const [category, setcategory] = useState("popular")
     const [person, setperson] = useState([])  
@@ -20,7 +20,6 @@ const People = () => {
     const getPerson = async() => {
         try {
             const {data} = await axios.get(`/person/${category}?page=${page}`)
-              console.log(data)
              if(data.results.length > 0) {
                 setperson((prevState) => [...prevState, ...data.results])
                 //settrending(data.results)

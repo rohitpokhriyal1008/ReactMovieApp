@@ -34,7 +34,6 @@ export const asyncloadmovie = (id) => async (dispatch, getState) => {
             watchproviders: watchproviders.results.IN,
             translations : translation
         };
-        console.log(allDetails)
         dispatch(loadmovie(allDetails));
         return allDetails;
 

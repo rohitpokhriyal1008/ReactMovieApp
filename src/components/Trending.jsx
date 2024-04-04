@@ -10,7 +10,7 @@ import Loader from './Loader'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const Trending = () => {  
-
+    document.title = "PrimeTime|| Trending"
     const navigate = useNavigate()   
     const [category, setcategory] = useState("all")
     const [duration, setduration] = useState("day")
@@ -21,7 +21,6 @@ const Trending = () => {
     const getTrending = async() => {
         try {
             const {data} = await axios.get(`/trending/${category}/${duration}?page=${page}`)
-              console.log(data)
              if(data.results.length > 0) {
                 settrending((prevState) => [...prevState, ...data.results])
                 //settrending(data.results)

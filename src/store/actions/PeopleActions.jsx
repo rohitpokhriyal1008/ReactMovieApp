@@ -26,7 +26,6 @@ export const asyncloadpeople = (id) => async (dispatch, getState) => {
             movie ,
             tv
         };
-        console.log(allDetails)
         dispatch(loadpeople(allDetails));
         return allDetails;
 

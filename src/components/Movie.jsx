@@ -10,7 +10,7 @@ import Loader from './Loader'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const Movie = () => {
-    document.title = "SCSDB|| Movie"
+    document.title = "PrimeTime|| Movie"
     const navigate = useNavigate()
     const [category, setcategory] = useState("now_playing")
     const [movie, setmovie] = useState([])  
@@ -20,7 +20,6 @@ const Movie = () => {
     const getMovie = async() => {
         try {
             const {data} = await axios.get(`/movie/${category}?page=${page}`)
-              console.log(data)
              if(data.results.length > 0) {
                 setmovie((prevState) => [...prevState, ...data.results])
                 //setmovie(data.results)

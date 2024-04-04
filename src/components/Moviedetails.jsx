@@ -4,15 +4,13 @@ import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-
 import { useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import Loader from './Loader'
-import HorizontalCards from './partials/HorizontalCards'
+import Recommendations from './partials/Recommedations'
 
 const Moviedetails = () => {
           const navigate = useNavigate()
           const dispatch = useDispatch()
           const {pathname} =useLocation()
-          console.log(pathname)
           const {info} = useSelector((state) => state.movie)
-          console.log(info)
           const {id} = useParams()
 
           useEffect(()=>{
@@ -32,11 +30,15 @@ const Moviedetails = () => {
     className='h-full w-screen px-[3%]'> 
      
         {/* navigation */}
-      <nav className='h-[10vh]  flex items-center '>
+      <nav className='h-[10vh]  flex items-center justify-between '>
+      <div>
        <i onClick={() => navigate(-1)} className=" text-2xl hover:text-violet-800 ri-arrow-left-line"></i>
       <a target="_blank"  href={info.detail.homepage}><i title="moviepage" className="ml-24 hover:text-blue-800  text-2xl ri-external-link-line"></i></a>
        <a target="_blank" href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}><i title="wikidata" className="ml-8  hover:text-blue-800 text-2xl ri-dribbble-fill"></i></a>
        <a target="_blank" href={`https://www.imdb.com/title/${info.externalid.imdb_id}`} className="ml-8  hover:text-blue-800 text-2xl">imdb</a>
+       </div>
+       <Link to="/" className='text-2xl hover:text-blue-800'> Home
+       </Link>
       </nav>
           
           {/* main */}
@@ -90,7 +92,7 @@ const Moviedetails = () => {
       </div>
       <hr className='my-4' />
       <h1 className='text-3xl my-4'> Recommended Movies</h1>
-     <HorizontalCards data={info.recommedations > 0 ? info.recommendations : info.similar}/>
+     <Recommendations data={info.recommendations > 0 ? info.recommendations : info.similar }/>
          <Outlet/>
       </div>
     

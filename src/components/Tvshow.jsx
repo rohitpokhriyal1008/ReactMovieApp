@@ -11,7 +11,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 
 const Tvshow = () => {
-    document.title = "SCSDB|| TV Shows"
+    document.title = "PrimeVue|| TV Shows"
     const navigate = useNavigate()
     const [category, setcategory] = useState("airing_today")
     const [tv, settv] = useState([])  
@@ -21,7 +21,6 @@ const Tvshow = () => {
     const getTv = async() => {
         try {
             const {data} = await axios.get(`/tv/${category}?page=${page}`)
-              console.log(data)
              if(data.results.length > 0) {
                 settv((prevState) => [...prevState, ...data.results])
                 //settrending(data.results)

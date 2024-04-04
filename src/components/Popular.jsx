@@ -11,7 +11,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 
 const Popular = () => {
-    document.title = "SCSDB|| Popular"
+    document.title = "PrimeTime|| Popular"
     const navigate = useNavigate()
     const [category, setcategory] = useState("movie")
     const [popular, setpopular] = useState([])  
@@ -21,7 +21,6 @@ const Popular = () => {
     const getPopular = async() => {
         try {
             const {data} = await axios.get(`/${category}/popular?page=${page}`)
-              console.log(data)
              if(data.results.length > 0) {
                 setpopular((prevState) => [...prevState, ...data.results])
                 //settrending(data.results)

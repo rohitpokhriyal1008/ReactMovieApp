@@ -34,7 +34,6 @@ export const asyncloadtv = (id) => async (dispatch, getState) => {
             watchproviders: watchproviders.results.IN,
             translations : translation
         };
-        console.log(allDetails)
         dispatch(loadtv(allDetails));
         return allDetails;
 

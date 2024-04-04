@@ -33,7 +33,6 @@ const Home = () => {
     const getTrending = async() => {
         try {
             const {data} = await axios.get(`/trending/${category}/week`)
-            console.log(data.results)
               settrending(data.results)
             
         } catch (error) {
