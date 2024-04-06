@@ -10,7 +10,7 @@ import Loader from './Loader'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const People = () => {
-    document.title = "PrimeTime| People"
+    document.title = "GaurPrime| People"
     const navigate = useNavigate()
     const [category, setcategory] = useState("popular")
     const [person, setperson] = useState([])  
@@ -50,13 +50,13 @@ const People = () => {
     },[category])
 
   return person.length > 0 ? (
-    <div className='w-full h-full px-[2%] bg-[#1F1E24]'>
-      <div className='flex items-center w-full'>
-      <h1 className='text-xl font-bold text-zinc-400 w-[20%]'>
-       <i onClick={() => navigate(-1)} className=" mr-2 hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
+    <div className='w-full h-full px-4 py-4 lg:py-0 lg:px-[2%] bg-[#1F1E24]'>
+      <div className='lg:flex items-center w-full'>
+      <h1 className='text-2xl lg:text-xl font-bold text-zinc-400 w-[20%]'>
+       <i onClick={() => navigate(-1)} className="mr-28 lg:mr-2 hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
         People 
        </h1>
-       <div className='flex items-center w-[95%]  '>
+       <div className='flex items-center w-full lg:w-[95%]'>
         <Topnav/>
         <div className='flex gap-3'>
         </div>

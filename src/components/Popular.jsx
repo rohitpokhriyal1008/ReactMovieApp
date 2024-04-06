@@ -11,7 +11,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 
 const Popular = () => {
-    document.title = "PrimeTime|| Popular"
+    document.title = "GaurPrime|| Popular"
     const navigate = useNavigate()
     const [category, setcategory] = useState("movie")
     const [popular, setpopular] = useState([])  
@@ -51,15 +51,15 @@ const Popular = () => {
     },[category])
 
   return popular.length > 0 ? (
-    <div className='w-full h-full px-[2%] bg-[#1F1E24]'>
-      <div className='flex items-center w-full'>
-      <h1 className='text-xl font-bold text-zinc-400'>
-       <i onClick={() => navigate(-1)} className=" mr-2 hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
+    <div className='w-full h-full px-4 py-4 lg:py-0 lg:px-[2%] bg-[#1F1E24]'>
+      <div className='lg:flex items-center w-full'>
+      <h1 className='text-2xl lg:text-xl font-bold text-zinc-400'>
+       <i onClick={() => navigate(-1)} className="mr-28 lg:mr-2 hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
         Popular
        </h1>
-       <div className='flex items-center w-[95%]  '>
+       <div className='flex items-center w-full lg:w-[95%]'>
         <Topnav/>
-        <div className='flex gap-3'>
+        <div className='hidden lg:flex lg:gap-3'>
         <Dropdown title="Category" options={["movie","tv"]} func={(e) => setcategory(e.target.value)} />
         </div>
 

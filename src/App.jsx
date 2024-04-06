@@ -15,7 +15,7 @@ import Notfound from './components/partials/Notfound'
 const App = () => {
   return (
     <>
-      <div className='w-full h-full bg-[#1F1E24] flex text-white'>
+      <div className='w-full h-full bg-[#1F1E24] lg:flex text-white'>
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/trending" element={<Trending/>} />

@@ -3,7 +3,9 @@ import notfound from '/404error.gif'
 
 const Notfound = () => {
   return (
-    <img className='h-full w-[100vw]'  src={notfound} alt="" />
+    <div className='h-screen w-screen bg-[#000000]'>
+      <img className='h-full w-full object-contain'  src={notfound} alt="" />
+    </div>
   )
 }
 

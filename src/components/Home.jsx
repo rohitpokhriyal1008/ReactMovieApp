@@ -53,11 +53,11 @@ const Home = () => {
     <>
           <Sidenav/>
 
-       <div className='w-[80%] h-screen overflow-y-auto'>
+       <div className='lg:w-[80%] h-full lg:overflow-y-auto'>
         <Topnav/>
         <Header data={wallpaper} />
-        <div className='p-6 flex justify-between items-center'>
-       <h1 className='text-3xl text-zinc-300'>
+        <div className='p-3 lg:p-6 flex justify-between items-center'>
+       <h1 className='text-xl lg:text-3xl text-zinc-300'>
         Trending
        </h1>
        <Dropdown title="Filter" options={["all","movie","tv"]} func={(e) => setcategory(e.target.value)} />

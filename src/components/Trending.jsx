@@ -10,7 +10,7 @@ import Loader from './Loader'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const Trending = () => {  
-    document.title = "PrimeTime|| Trending"
+    document.title = "GaurPrime|| Trending"
     const navigate = useNavigate()   
     const [category, setcategory] = useState("all")
     const [duration, setduration] = useState("day")
@@ -51,15 +51,15 @@ const Trending = () => {
     },[category,duration])
 
   return trending.length > 0 ? (
-    <div className='w-full h-full px-[2%] bg-[#1F1E24]'>
-      <div className='flex items-center w-full'>
-      <h1 className='text-xl font-bold text-zinc-400'>
-       <i onClick={() => navigate(-1)} className=" mr-2 hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
+    <div className='w-full h-full py-4 px-2 lg:py-0 lg:px-[2%] bg-[#1F1E24]'>
+      <div className='lg:flex items-center w-full '>
+      <h1 className='text-2xl lg:text-xl font-bold text-zinc-400'>
+       <i onClick={() => navigate(-1)} className=" mr-32 lg:mr-2  hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
         Trending
        </h1>
-       <div className='flex items-center w-[95%]  '>
+       <div className='flex items-center w-full lg:w-[95%]  '>
         <Topnav/>
-        <div className='flex gap-3'>
+        <div className='hidden lg:flex lg:gap-3'>
         <Dropdown title="Category" options={["all","movie","tv"]} func={(e) => setcategory(e.target.value)} />
         <Dropdown title="Duration" options={["day","week"]} func={(e) => setduration(e.target.value)} />
         </div>

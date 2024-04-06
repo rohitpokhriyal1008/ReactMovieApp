@@ -13,8 +13,8 @@ const Trailer = () => {
 
 
   return (
-    <div className='absolute z-100 bg-[rgba(0,0,0,.9)] top-0 left-0 w-screen h-full flex justify-center items-center '>
-       <i onClick={() => navigate(-1)} className=" absolute top-4 right-10 text-5xl hover:text-violet-800 ri-close-fill"></i>
+    <div className='absolute z-100 bg-[rgba(0,0,0,.9)] top-0 left-0  w-screen h-[56vh] lg:h-full flex justify-center items-center'>
+       <i onClick={() => navigate(-1)} className=" lg:block hidden absolute  top-4 right-10 text-5xl cursor-pointer hover:text-violet-800 ri-close-fill"></i>
 
             {videos ? (<ReactPlayer
             controls

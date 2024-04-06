@@ -10,7 +10,7 @@ import Loader from './Loader'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const Movie = () => {
-    document.title = "PrimeTime|| Movie"
+    document.title = "GaurPrime|| Movie"
     const navigate = useNavigate()
     const [category, setcategory] = useState("now_playing")
     const [movie, setmovie] = useState([])  
@@ -50,15 +50,18 @@ const Movie = () => {
     },[category])
 
   return movie.length > 0 ? (
-    <div className='w-full h-full px-[2%] bg-[#1F1E24]'>
-      <div className='flex items-center w-full'>
-      <h1 className='text-xl font-bold text-zinc-400 w-[20%]'>
-       <i onClick={() => navigate(-1)} className=" mr-2 hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
-        Movie <small className='text-xs'>({category})</small>
+    <div className='w-full h-full py-4 px-2 lg:py-0 lg:px-[2%] bg-[#1F1E24]'>
+      <div className='lg:flex items-center w-full'>
+      <h1 className='text-2xl lg:text-xl font-bold text-zinc-400 w-full lg:w-[20%]'>
+       <i onClick={() => navigate(-1)} className=" mr-32 lg:mr-2 hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
+       Movies
        </h1>
-       <div className='flex items-center w-[95%]'>
+       <div className='lg:hidden block'>
+       <Topnav/>
+       </div>
+       <div className='hidden lg:flex lg:items-center  lg:w-[95%]'>
         <Topnav/>
-        <div className='flex gap-3'>
+        <div className='hidden lg:flex lg:gap-3'>
         <Dropdown title="Category" options={["popular","top_rated","upcoming","now_playing"]} func={(e) => setcategory(e.target.value)} />
         </div>
 
