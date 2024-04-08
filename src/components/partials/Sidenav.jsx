@@ -47,9 +47,9 @@ const Sidenav = () => {
       <div className='lg:hidden py-2 flex gap-8'>
         <button onClick={() => setIsNavOpen(!isNavOpen)} className='text-white'>
           {isNavOpen ? (
-            <i className="text-[#6556CD] ri-close-line text-4xl ml-4"></i>
+            <i className="text-[#6556CD] ri-close-line text-3xl ml-4"></i>
           ) : (
-            <i className="text-zinc-300 ri-menu-3-line text-4xl ml-4"></i>
+            <i className="text-zinc-300 ri-menu-3-line text-3xl ml-4"></i>
           )}
         </button>
         <h1 className='flex font-extrabold items-center gap-2 text-white text-xl my-3 ml-10'>
@@ -62,12 +62,16 @@ const Sidenav = () => {
       {isNavOpen && (
         <div className='lg:hidden fixed top-3 left-0 w-full h-full bg-black bg-opacity-50 z-50'>
           <div className='absolute top-0 left-0 w-[80%] h-full bg-[#1F1E24]'>
-            <h1 className='flex font-extrabold items-center gap-2 text-white text-xl my-3 ml-4'>
+            <div className='flex font-extrabold items-center justify-between text-white text-xl my-3 ml-4 px-2'>
+              <h1 className=' flex gap-2'>
               <i className="text-[#6556CD] ri-tv-fill"></i>
               <span className=''>Prime</span> 
-            <i onClick={() => handleBackClick()} className="ml-24 hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
+              </h1>
+            <p>
+            <i onClick={() => handleBackClick()} className=" hover:text-[#6556CD] ri-arrow-left-line rounded "></i>
+            </p>
 
-            </h1>
+            </div>
             <nav className='text-xl text-zinc-400  flex flex-col mt-10 gap-y-8'>
               <Link to="/trending" className='p-6 rounded-lg hover:bg-[#6556cd] hover:text-white duration-500' onClick={() => setIsNavOpen(false)}>
                 <i className="mr-2 ri-fire-fill"></i>
