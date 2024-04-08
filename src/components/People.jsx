@@ -10,7 +10,7 @@ import Loader from './Loader'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const People = () => {
-    document.title = "GaurPrime| People"
+    document.title = "Prime| People"
     const navigate = useNavigate()
     const [category, setcategory] = useState("popular")
     const [person, setperson] = useState([])  

@@ -5,25 +5,28 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import Notfound from './Notfound'
 
 const Trailer = () => {
+    const navigate = useNavigate()
+    const { pathname } = useLocation()
+    const category = pathname.includes("movie") ? "movie" : "tv"
+    const { videos } = useSelector(state => state[category].info)
 
-        const navigate = useNavigate()
-        const {pathname} = useLocation()
-        const category = pathname.includes("movie") ? "movie" : "tv"
-        const {videos} = useSelector(state => state[category].info)
-
-
-  return (
-    <div className='absolute z-100 bg-[rgba(0,0,0,.9)] top-0 left-0  w-screen h-[56vh] lg:h-full flex justify-center items-center'>
-       <i onClick={() => navigate(-1)} className=" lg:block hidden absolute  top-4 right-10 text-5xl cursor-pointer hover:text-violet-800 ri-close-fill"></i>
-
-            {videos ? (<ReactPlayer
-            controls
-            url={`https://www.youtube.com/watch?v=${videos.key}`}
-             height={"800px"}
-             width={"1200px"}
-            />): <Notfound/>}
-    </div>
-  )
+    return (
+        <div className='fixed top-0 left-0 w-screen h-screen bg-black flex justify-center items-center'>
+            <i onClick={() => navigate(-1)} className="hidden lg:block lg:absolute lg:top-4 lg:right-12 lg:text-3xl lg:text-white lg:cursor-pointer ri-close-line"></i>
+            <div className="w-full h-[40vh] lg:h-full max-w-screen-lg">
+                {videos ? (
+                    <ReactPlayer
+                        controls
+                        url={`https://www.youtube.com/watch?v=${videos.key}`}
+                        width="100%"
+                        height="100%"
+                    />
+                ) : (
+                    <Notfound />
+                )}
+            </div>
+        </div>
+    )
 }
 
 export default Trailer

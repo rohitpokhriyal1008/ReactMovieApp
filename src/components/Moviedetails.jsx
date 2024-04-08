@@ -108,7 +108,7 @@ const Moviedetails = () => {
      <Recommendations data={info.recommendations > 0 ? info.recommendations : info.similar }/>
      <h1 className=' lg:hidden flex font-extrabold justify-center items-center gap-2 text-white text-2xl pt-20 pb-6 ml-4'>
           <i className="text-[#6556CD] ri-tv-fill"></i>
-          <span>GaurPrime</span>
+          <span>Prime</span>
         </h1>
          <Outlet/>
         

@@ -11,7 +11,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 
 const Popular = () => {
-    document.title = "GaurPrime|| Popular"
+    document.title = "Prime|| Popular"
     const navigate = useNavigate()
     const [category, setcategory] = useState("movie")
     const [popular, setpopular] = useState([])  

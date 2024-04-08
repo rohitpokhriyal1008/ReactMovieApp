@@ -10,7 +10,7 @@ import Loader from './Loader'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const Movie = () => {
-    document.title = "GaurPrime|| Movie"
+    document.title = "Prime|| Movie"
     const navigate = useNavigate()
     const [category, setcategory] = useState("now_playing")
     const [movie, setmovie] = useState([])  

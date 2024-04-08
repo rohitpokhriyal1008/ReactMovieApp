@@ -26,12 +26,12 @@ const Topnav = () => {
  
   return (
        <>
-    <div className='w-full h-[5vh] lg:h-[10vh]  justify-center items-center text-white relative flex flex-col lg:mb-3'>
-        <div className='lg:w-[50%] w-full rounded-full  py-2 px-6 lg:px-4 mt-4'>
-        <i className="text-xl lg:text-2xl ri-search-line"></i> 
+    <div className='w-full h-[5vh] lg:h-[10vh] justify-center items-center text-white relative flex flex-col lg:mb-3'>
+        <div className='lg:w-[50%] w-full  rounded-full  py-2 px-6 lg:px-4 mt-4'>
+        <i className="text-xl lg:text-2xl  ri-search-line"></i> 
         <input onChange={(e) => setquery(e.target.value) } value={query}
-        className='text-xl mx-8 lg:mr-[35%] lg:w-[40%] border-none outline-none bg-transparent ' type="text" placeholder="movies/tv shows.."/>
-         {query.length > 0 && <i onClick={() => setquery("")} className=" text-xl lg:text-2xl ri-close-large-fill"></i> }
+        className='text-xl ml-3 lg:mr-[40%]  lg:w-[40%] border-none outline-none bg-transparent ' type="text" placeholder="movies/tv shows.."/>
+         {query.length > 0 && <i onClick={() => setquery("")} className=" text-xm lg:text-2xl ri-close-large-fill"></i> }
         
         </div>
 

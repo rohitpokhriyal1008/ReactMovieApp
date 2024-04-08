@@ -11,7 +11,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 
 const Tvshow = () => {
-    document.title = "GaurPrime|| TV Shows"
+    document.title = "Prime|| TV Shows"
     const navigate = useNavigate()
     const [category, setcategory] = useState("airing_today")
     const [tv, settv] = useState([])  

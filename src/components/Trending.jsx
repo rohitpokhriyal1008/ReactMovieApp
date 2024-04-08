@@ -10,7 +10,7 @@ import Loader from './Loader'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const Trending = () => {  
-    document.title = "GaurPrime|| Trending"
+    document.title = "Prime|| Trending"
     const navigate = useNavigate()   
     const [category, setcategory] = useState("all")
     const [duration, setduration] = useState("day")
